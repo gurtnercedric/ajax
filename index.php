@@ -15,9 +15,23 @@
 
 <style>
 body{
-	margin: 5%;
+	margin: 0%;
 	padding: 5%;
-	background-color: #74C3FB; 
+	background-color: #B7E1FF; 
+}
+.formclass {
+	background-color: #ffffff;
+	padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 30px;
+	border-radius: 18px; 
+	border:5px solid #1A1A1B;
+}
+
+#ergebnis {
+	border-radius: 18px; 
+	border:2px solid #1A1A1B;
 }
 
 
@@ -32,8 +46,10 @@ body{
 	 <div class="containter">
 		<div class="row"
 			<div class="col-md-12">
-			
-<form method="post">
+			<center><strong><h1>Autobestellungen</h1><strong></center>
+			<br><br>
+			<div class="formclass">
+			<form method="post">
             <form class="form-inline">
               <div class="form-group">
                 <label for="name">Fahrzeugname</label>
@@ -50,7 +66,7 @@ body{
                   <input  class="form-control"
                           type="color"
                           name="farbe"
-                          value="#ff0000"
+                          value="#BFC1C2"
                           placeholder=""
                           id="color"
 
@@ -96,14 +112,33 @@ body{
                 </div>
 
                 <div class="form-group">
-                  <button type="submit" id="submitbutton" name="submitbutton" class="btn btn-info"><i class="fa fa-envelope-o"></i> Submit
-                  </button>
+                  
                   <button onclick="firstFunction()" type="button" name="javabutton" class="btn btn-danger"><i class="fa fa-coffee "></i> Javascript
                   </button>
                 </div>
           </form>
-			<div class="ergebnis"></div>
+		  <br>
+		  
+		  
+		  
+			<table id="ergebnis" class="table">
+			<thead>
+			<td class="formhead"><h3>Name</h3></td>
+			<td class="formhead"><h3>Farbe</h3></td>
+			<td class="formhead"><h3>Bauart</h3></td>
+			<td class="formhead"><h3>Kraftstoff</h3></td>
+			<td class="formhead"><h3>Betankungen</h3></td>
+			</thead>
 			
+			<tbody>
+			
+			
+			</tbody>
+			
+			</table>
+			
+			
+			</div>
 			</div>
 		</div>
 	</div>

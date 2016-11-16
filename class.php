@@ -56,6 +56,7 @@ class Auto{
 		'antwort' => $this->antwort
 		);
 	}
+	http_response_code($this->code);s
 	echo json_encode($this->daten, $this->code);
 	}
 	

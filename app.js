@@ -18,14 +18,7 @@ function firstFunction(){
   }
 
   if(check) {
-    var html = '<div class="autoausgabe">\
-                <h4>Javascript Information</h4>\
-                <ul>\
-                <li>Name      : '+name+'</li>\
-                <li>Farbe     : '+farbe+'</li>\
-                <li>Bauart    : '+bauart+'</li>\
-                <li>Kraftstoff: '+kraftstoff+'</li>\
-                </ul></div>';
+
     var warnung = '<div class="fehler">\
                 <h4>Es wurden falsche Daten erkannt!</h4>\
                 </div>';
@@ -47,13 +40,27 @@ function firstFunction(){
       dataType: "JSON",
       beforeSend: function(){
         console.log('Daten werden abgerufen...');
-        $('#ergebnis').html('').addClass('hidden');
+        $('#ergebnis').addClass('hidden');
         $('#submitbutton').attr('disabled', true).addClass('hidden');
         //$('button[name=submitbutton]')
       },
       success: function(daten){
         console.log('success: ' + daten);
-        $('#ergebnis').html(html).removeClass('hidden');
+		if (daten.status) {	
+			var html = '<tr>\
+						<td class="capitalize">'+daten.name+'</td>\
+						<td class="uppercase" style="color:'+ daten.farbe+'">\
+							'+daten.farbe+'\
+						</td>\
+						<td class="capitalize">'+daten.bauart+'</td>\
+						<td class="capitalize">'+daten.kraftstoff+'</td>\
+						<td class="capitalize"></td>\
+					</tr>';
+							
+			
+        $('#ergebnis').append(html).removeClass('hidden');
+		}
+		
       },
       error: function(error){
         console.log('fehler: ' + error);
